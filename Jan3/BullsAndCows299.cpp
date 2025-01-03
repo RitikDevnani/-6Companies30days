@@ -27,47 +27,6 @@ public:
             cow += min(real[i], fake[i]);
         }
 
-        //making result
-        
-        if(bull == 0) result.push_back('0');
-        //reverse the number
-        int rev = 0, store = bull;
-        for(int i = 1; i <= store; i*= 10)
-        {
-            rev = rev*10 + bull % 10;
-            bull /= 10;
-        }
-        bull = rev;
-        //add in string
-        for(int i = 1; i <= store; i*= 10)
-        {
-            int temp = bull % 10;
-            result.push_back(temp + '0');
-
-            bull /= 10;
-        }
-
-        result.push_back('A');
-
-        if(cow == 0) result.push_back('0');
-        rev = 0;
-        store = cow;
-        for(int i = 1; i <= store; i*= 10)
-        {
-            rev = rev*10 + cow % 10;
-            cow /= 10;
-        }
-        cow = rev;
-        //add in string
-        for(int i = 1; i <= store; i*= 10)
-        {
-            int temp = cow % 10;
-            result.push_back(temp + '0');
-
-            cow /= 10;
-        }
-        result.push_back('B');
-
-        return result;
+        return to_string(bull) + 'A' + to_string(cow) + 'B';
     }
 };
